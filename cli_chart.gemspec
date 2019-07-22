@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "cli_chart/version"
 
@@ -8,14 +9,18 @@ Gem::Specification.new do |spec|
   spec.version = CLIChart.gem_version
   spec.authors = ["Jared Beck"]
   spec.email = ["jared@jaredbeck.com"]
-  spec.summary = "Command Line Chart"
-  spec.files = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  end
+  spec.summary = "Command line (CLI) chart"
+  spec.homepage = "https://github.com/jaredbeck/cli_chart"
+  spec.files = [
+    "lib/cli_chart.rb",
+    "lib/cli_chart/version.rb",
+    "cli_chart.gemspec"
+  ]
   spec.executables = []
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = "~> 2.6"
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency "rubocop", "~> 0.73.0"
 end

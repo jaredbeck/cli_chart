@@ -1,8 +1,6 @@
 # CLIChart
 
-Command line chart.
-
-Not a [graph][1], a chart.
+Command line (CLI) chart. Not a [graph][1], a chart.
 
 ## Contributing
 
