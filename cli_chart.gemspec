@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "sorbet-runtime"
+
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "cli_chart/version"
@@ -23,4 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "rubocop", "~> 0.73.0"
+  spec.add_development_dependency "sorbet", "~> 0.4.4485"
+  spec.add_development_dependency "sorbet-progress", "~> 0.2.3"
 end
